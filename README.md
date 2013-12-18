@@ -1,5 +1,7 @@
 # CarbonPms
 
+[![Code Climate](https://codeclimate.com/github/chaione/carbon_pms.png)](https://codeclimate.com/github/chaione/carbon_pms)
+
 If you're not using a CarbonPMS server, then you don't need this.
 
 ## Installation
