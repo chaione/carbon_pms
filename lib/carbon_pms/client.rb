@@ -1,3 +1,5 @@
+require 'httparty'
+
 module CarbonPms
   class Client
     include HTTParty
