@@ -11,7 +11,7 @@ module CarbonPms
       else
         self.class.base_uri "https://#{host}/api"
       end
-      self.class.headers('Authorization' => "token #{auth_token}") if auth_token
+      self.class.headers('Authorization' => %Q[Token token="#{auth_token}"]) if auth_token
       self.class.headers('Accept' => "application/vnd.carbon.pms.v#{version}") if version
     end
 
