@@ -55,7 +55,22 @@ module CarbonPms
     # @option options [String] :sound play the specified sound when the notification is received.
     # @option options [Integer] :content_available notify the device that new content is available
     def apns_notificaton(options={})
-      return post '/push/apns', query: options
+      return post '/push/apns', body: options
+    end
+
+    # Sends bulk push notifications to the APNS
+    #
+    # @param [Hash] options hash to construct a notification
+    # @option options [Array] :device_token array of device token to receive this push notification
+    # @option options [String] :app the name of the app
+    # @option options [String] :environment the environment this app is running in _(production, development, sandbox)_
+    # @option options [String] :alert the message to send
+    # @option options [Hash] :data any custom attributes to send
+    # @option options [Integer] :badge sets the badge number to the specified number
+    # @option options [String] :sound play the specified sound when the notification is received.
+    # @option options [Integer] :content_available notify the device that new content is available
+    def apns_bulk_notificaton(options={})
+      return post '/push/apns_bulk', body: options
     end
 
     # Sends a push notification to GCM
@@ -68,7 +83,7 @@ module CarbonPms
     # @option options [String] :collapse_key signifies that this is a send-to-sync message. You can use up to 4 different collapse_keys at a time
     # @option options [Integer] :expiry set the time to live of the message. Can be from 0 to 2,419,200 seconds.
     def gcm_notification(options={})
-      return post '/push/gcm', query: options
+      return post '/push/gcm', body: options
     end
 
     private
