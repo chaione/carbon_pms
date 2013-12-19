@@ -31,7 +31,7 @@ describe CarbonPms::Client do
       end
 
       it 'should set the authorization header if given an auth token' do
-        client.class.headers['Authorization'].should eq 'token abcdef'
+        client.class.headers['Authorization'].should eq 'Token token="abcdef"'
       end
 
       it 'should set the version header if given a version' do
