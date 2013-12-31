@@ -58,6 +58,8 @@ module CarbonPms
       return post '/push/apns', body: options
     end
 
+    alias_method :apns_notification, :apns_notificaton
+
     # Sends bulk push notifications to the APNS
     #
     # @param [Hash] options hash to construct a notification
@@ -72,6 +74,8 @@ module CarbonPms
     def apns_bulk_notificaton(options={})
       return post '/push/apns_bulk', body: options
     end
+
+    alias_method :apns_bulk_notification, :apns_bulk_notificaton
 
     # Sends a push notification to GCM
     #
